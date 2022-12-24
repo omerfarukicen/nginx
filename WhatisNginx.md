@@ -1,6 +1,11 @@
 # Introduction
 
 Nginx is one of the most popular web servers in the world and is responsible for hosting some of the largest and highest-traffic sites on the internet.
+it provides many important capabilities including:
+- Reverse Proxy
+- Load Balancer
+- Web-Application Firewall
+
 
 ## Installing
 
