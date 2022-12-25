@@ -100,6 +100,18 @@ nginx -t
 systemctl restart nginx
 
 ```
+### Reverse Proxy move Header
+```shell
+    proxy_set_header Host github.com.tr;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header        X-Forwarded-Proto $scheme;
+    proxy_set_header X-Forwarded-For $remote_addr;
+    proxy_set_header Origin https://test-intranet.hmb.gov.tr;
+    proxy_pass http://github_backend_servers/;
+    proxy_hide_header Access-Control-Allow-Origin;
+
+```
 
 [TOC]
 
