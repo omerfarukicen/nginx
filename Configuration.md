@@ -1,6 +1,9 @@
-user www-data;         //  Defines user credentials used by worker process           
-worker_processes 2;    //  Defines number of worker process
-pid /run/nginx.pid;    //  Defines a file that will store the process ID of the main process
+user www-data;         // Defines user credentials used by worker process           
+
+worker_processes 2;    // Defines number of worker process
+
+pid /run/nginx.pid;    // Defines a file that will store the process ID of the main process
+
 include /etc/nginx/modules-enabled/*.conf;
 
 events {
