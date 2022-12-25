@@ -144,7 +144,7 @@ server {
  }
 }
  ```	
-### Caching
+## Caching
  ```shell
     location ~ \.(jpeg){
      root  /usr/share/nginx/html/kplabs;
@@ -152,6 +152,13 @@ server {
      add_header Cache-Control "no-cache";
      add_header Cache-Control "no-store";
      add_header Cache-Control "must-revalidate";
+}
+ ```	
+### Static Assets
+ ```shell
+    location ~ \.(css|js|jpeg|JPG|png){
+     root  /usr/share/nginx/html/kplabs/assets;
+     try_files $uri $uri/;
 }
  ```	
 
