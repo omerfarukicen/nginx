@@ -62,6 +62,19 @@ it is used to set global options that affect how Nginx handles connections at a 
 	      # multi_accept on;
       }
 
+#### HTTP Context
+
+Defining an HTTP context is probably the most common use of Nginx. When configuring Nginx as a web server or reverse proxy, the “http” context will hold the majority of the configuration. This context will contain all of the directives and other contexts necessary to define how the program will handle HTTP or HTTPS connections.
+
+     events {
+	      worker_connections 768;
+	      # multi_accept on;
+      }
+
+## Nginx Configuration
+https://www.digitalocean.com/community/tools/nginx
+
+
 
 [TOC]
 
