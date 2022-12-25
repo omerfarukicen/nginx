@@ -173,7 +173,21 @@ server {
     deny all;
   }
  ```	
-
+or
+ ```shell
+  ## intranet sayfalari disaridan engelle
+  location /admin {
+  include /etc/nginx/conf.d/WhiteList
+  deny all;
+  }
+ ```	
+whiteList
+ ```shell
+    allow 127.0.0.0/24;
+    allow 10.0.0.0/8;
+    allow 172.16.0.0/12;
+    allow 192.168.0.0/16;
+ ```
 
 
 [TOC]
