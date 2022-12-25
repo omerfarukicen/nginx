@@ -161,6 +161,19 @@ server {
      try_files $uri $uri/;
 }
  ```	
+## Access Control
+
+ ```shell
+  ## intranet sayfalari disaridan engelle
+  location /admin {
+    allow 127.0.0.0/24;
+    allow 10.0.0.0/8;
+    allow 172.16.0.0/12;
+    allow 192.168.0.0/16;
+    deny all;
+  }
+ ```	
+
 
 
 [TOC]
