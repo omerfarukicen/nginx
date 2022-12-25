@@ -70,11 +70,36 @@ Defining an HTTP context is probably the most common use of Nginx. When configur
 	      worker_connections 768;
 	      # multi_accept on;
       }
+      
 
 ## Nginx Configuration
 https://www.digitalocean.com/community/tools/nginx
 
+#### Test configuration file
+```shell
+nginx - t 
+```
 
+## Reverse Proxy
+```shell
+cd /etc/nginx/conf.d
+nano proxy.conf
+server {
+    listen       80;
+    server_name  localhost;
+ 
+    location / {
+        proxy_pass http://10.139.0.3;
+    }
+ 
+    location /admin {
+        proxy_pass http://139.59.11.125;
+      }
+}
+nginx -t
+systemctl restart nginx
+
+```
 
 [TOC]
 
