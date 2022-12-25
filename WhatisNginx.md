@@ -189,6 +189,19 @@ whiteList
     allow 192.168.0.0/16;
  ```
 
+## Basic Authentication
+```shell
+ location /admin {
+  root  /usr/share/nginx/html/kplabs;
+  index index.html  index.htm;
+  auth_basic  "Basic Authentication ";
+  auth_basic_user_file "/etc/nginx/.htpasswd"
+```
+```shell
+sudo htpasswd -c /etc/nginx/.htpasswd admin
+```
+    
+
 
 [TOC]
 
