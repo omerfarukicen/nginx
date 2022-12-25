@@ -38,6 +38,30 @@ sudo systemctl reload nginx
 sudo systemctl disable nginx
 sudo systemctl enable nginx
 ```
+## Configuration Contexts
+- main
+- events
+- http
+- mail
+
+#### Main Context
+Any directives that exist entirely outside of context blocks is said main context
+
+     user www-data;
+     worker_processes auto;
+     pid /run/nginx.pid;
+     include /etc/nginx/modules-enabled/*.conf;
+
+
+#### Event Context
+
+it is used to set global options that affect how Nginx handles connections at a general level. There can only be a single events context defined within the Nginx configuration.
+
+     events {
+	      worker_connections 768;
+	      # multi_accept on;
+      }
+
 
 [TOC]
 
