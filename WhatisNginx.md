@@ -144,6 +144,16 @@ server {
  }
 }
  ```	
+### Caching
+ ```shell
+    location ~ \.(jpeg){
+     root  /usr/share/nginx/html/kplabs;
+#     expires 20s;
+     add_header Cache-Control "no-cache";
+     add_header Cache-Control "no-store";
+     add_header Cache-Control "must-revalidate";
+}
+ ```	
 
 
 [TOC]
