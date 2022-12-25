@@ -112,6 +112,20 @@ systemctl restart nginx
     proxy_hide_header Access-Control-Allow-Origin;
 
 ```
+ Reverse Proxy Side
+ ```shell
+  nano /etc/nginx/conf.d/proxy.conf
+  proxy_set_header X-Real-IP $remote_addr;
+```		 
+ Backend Server Side
+ ```shell
+   nano /etc/nginx/nginx.conf
+   "$http_x_real_ip"
+ ```	
+
+
+
+
 
 [TOC]
 
