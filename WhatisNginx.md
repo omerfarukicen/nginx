@@ -124,7 +124,26 @@ systemctl restart nginx
  ```	
 
 
-
+## Implementing Nginx as Load Balancer 
+ ```shell
+nano loadbalancer.conf
+ ```	
+ 
+ ```shell
+upstream backend {
+  server 10.139.0.3;
+  server 10.139.0.4;
+}
+ 
+server {
+    listen       80;
+    server_name  localhost;
+ 
+    location / {
+        proxy_pass http://backend;
+ }
+}
+ ```	
 
 
 [TOC]
