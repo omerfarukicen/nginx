@@ -32,6 +32,9 @@ WantedBy=multi-user.target
 ```
 
 # Third Party Module
+## Dynamic
+https://www.nginx.com/blog/compiling-dynamic-modules-nginx-plus/
+
 
 ```shell
 git  clone perusio/nginx-hello-world-module
@@ -42,12 +45,12 @@ make modules
 ### Add Config (nginx.conf)
 Core
 
+
 ```shell
 load_modules /etc/nginx/modules/ngx_http_hello_world_module_so;
 ```
-
-
+## Static
 
 ```shell
-
+  --add-module=/path/to/nginx-hello-world-module
 ```
