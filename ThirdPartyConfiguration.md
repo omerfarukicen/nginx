@@ -35,17 +35,15 @@ WantedBy=multi-user.target
 
 ```shell
 git  clone perusio/nginx-hello-world-module
-
 ./configure --add-dynamic-module=/path/to/nginx-hello-world-module
-
 make modules
 
 ```
-
-
+### Add Config (nginx.conf)
+Core
 
 ```shell
-
+load_modules /etc/nginx/modules/ngx_http_hello_world_module_so;
 ```
 
 
