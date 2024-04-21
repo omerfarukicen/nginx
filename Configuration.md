@@ -1,3 +1,5 @@
+```
+
 user www-data;         // Defines user credentials used by worker process           
 
 worker_processes 2;    // Defines number of worker process
@@ -101,3 +103,4 @@ location /hmb/{}
 #		proxy      on;
 #	}
 #}
+```
